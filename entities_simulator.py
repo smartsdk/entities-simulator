@@ -48,7 +48,7 @@ def insert_entities(orion_url, entities, sleep):
 
 
 def update_entity(orion_url, entity, attrs_to_update):
-    uri = '{}/v2/entities/{}/attrs?type={}'.format(ORION_URL, e['id'], e['type'])
+    url = '{}/v2/entities/{}/attrs?type={}'.format(orion_url, e['id'], e['type'])
     r = requests.patch(url,
                        data=json.dumps(attrs_to_update),
                        headers=HEADERS_PUT)
